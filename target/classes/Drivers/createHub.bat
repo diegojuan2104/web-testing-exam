@@ -1,0 +1,1 @@
+java -jar C:\Users\diego\OneDrive\Escritorio\TAE\Tools\selenium-server-4.7.0.jar hub
