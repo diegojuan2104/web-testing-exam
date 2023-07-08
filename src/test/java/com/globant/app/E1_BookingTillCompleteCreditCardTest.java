@@ -1,10 +1,17 @@
 package com.globant.app;
 
 import java.io.IOException;
+import java.time.Duration;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+import java.util.function.Function;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -36,25 +43,58 @@ public class E1_BookingTillCompleteCreditCardTest extends BasePage {
 	@Test
 	public void endToEndTest() throws InterruptedException {
 		
-		WebDriverWait wait = new WebDriverWait(driver, 10);
+	    FluentWait<WebDriver> fluentWait = new FluentWait<>(driver)
+	                .withTimeout(Duration.ofSeconds(30))
+	                .pollingEvery(Duration.ofSeconds(1))
+	                .ignoring(NoSuchElementException.class);
+	    
+	    
 		//STEP 1. Search for a flight from LAS to LAX
 		HomePage home = new HomePage(driver);
-		wait.until(ExpectedConditions.visibilityOf(home.getFlightsBtn()));
-		home.getFlightsBtn().click();
-		wait.until(ExpectedConditions.visibilityOf(home.getOriginBtn()));
-		home.getOriginBtn().click();
-		wait.until(ExpectedConditions.visibilityOf(home.getOriginField()));
-		home.getOriginField().click();
-		home.getOriginField().sendKeys("LAS");
+		home.getBenefitsBtn().click();
 		
-		System.out.println(home.getOriginsList().size());
+		home.getCookiesBtn().click();
+		
+		home.getOriginField().click();
+		home.getOriginField().clear();
+		home.getOriginField().sendKeys("LAS");
+//		
+//		driver.manage().timeouts().implicitlyWait(500, TimeUnit.MILLISECONDS);
+		
+		Function<WebDriver, List<WebElement>> getOriginsListCondition = webDriver -> home.getOriginsList();
+		fluentWait.until(getOriginsListCondition);
+		
+		
+		System.out.println(home.getOriginsList());
 		for(WebElement origin:home.getOriginsList()) {
-			if(origin.getText().contains("Las Vegas (LAS - Harry Reid Intl.)")) {
+			if(origin.getText().contains("Las Vegas, Nevada, Estados Unidos")) {
 				origin.click();
 			}
 		}
 		
-		Thread.sleep(10000);
+		home.getDestinationField().click();
+		home.getDestinationField().sendKeys("L");
+		home.getDestinationField().sendKeys("A");
+		home.getDestinationField().sendKeys("X");
+		
+		
+	    FluentWait<WebDriver> fluentWait2 = new FluentWait<>(driver)
+                .withTimeout(Duration.ofSeconds(30))
+                .pollingEvery(Duration.ofSeconds(1))
+                .ignoring(NoSuchElementException.class);
+		
+		Function<WebDriver, List<WebElement>> getDestinationListCondition = webDriver -> home.getDestinationList();
+		fluentWait2.until(getDestinationListCondition);
+		
+		Thread.sleep(500);
+		for(WebElement destination:home.getDestinationList()) {
+			System.out.println(destination.getText());
+			if(destination.getText().contains("Los Ángeles, California, Estados Unidos")) {
+				destination.click();
+			}
+		}
+//		
+//         Thread.sleep(5000);
 	}
 	
 }

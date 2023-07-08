@@ -6,6 +6,7 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -26,7 +27,12 @@ public class BasePage {
 		if (browserProperty.equals("chrome")) {
 			System.setProperty("webdriver.chrome.driver",
 					System.getProperty("user.dir") +  "\\src\\main\\java\\Drivers\\chromedriver.exe");
-			driver = new ChromeDriver();
+			
+			ChromeOptions options = new ChromeOptions();
+	        options.addArguments("--incognito");
+			driver = new ChromeDriver(options);
+
+
 		} else if (browserProperty.equals("firefox")) {
 			System.setProperty("webdriver.chrome.driver",
 					System.getProperty("user.dir") +  "\\src\\main\\java\\Drivers\\geckodriver.exe");
