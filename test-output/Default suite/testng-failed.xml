@@ -5,9 +5,11 @@
     <classes>
       <class name="com.globant.app.E1_BookingTillCompleteCreditCardTest">
         <methods>
+          <include name="searchFlight"/>
+          <include name="verifyTripDetails"/>
           <include name="tearDown"/>
-          <include name="endToEndTest"/>
           <include name="setup"/>
+          <include name="filterOptions"/>
         </methods>
       </class> <!-- com.globant.app.E1_BookingTillCompleteCreditCardTest -->
     </classes>

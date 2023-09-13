@@ -1,21 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-07-06T19:49:31 COT" name="Default suite" finished-at="2023-07-06T19:49:40 COT" duration-ms="8865">
+  <suite started-at="2023-07-28T19:45:45 COT" name="Default suite" finished-at="2023-07-28T19:46:14 COT" duration-ms="29036">
     <groups>
     </groups>
-    <test started-at="2023-07-06T19:49:31 COT" name="Default test" finished-at="2023-07-06T19:49:40 COT" duration-ms="8865">
+    <test started-at="2023-07-28T19:45:45 COT" name="Default test" finished-at="2023-07-28T19:46:14 COT" duration-ms="29036">
       <class name="com.globant.app.E1_BookingTillCompleteCreditCardTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.globant.app.E1_BookingTillCompleteCreditCardTest@33990a0c]" started-at="2023-07-06T19:49:31 COT" name="setup" finished-at="2023-07-06T19:49:37 COT" duration-ms="6575" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.globant.app.E1_BookingTillCompleteCreditCardTest@24fcf36f]" started-at="2023-07-28T19:45:45 COT" name="setup" finished-at="2023-07-28T19:45:52 COT" duration-ms="7127" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="endToEndTest()[pri:0, instance:com.globant.app.E1_BookingTillCompleteCreditCardTest@33990a0c]" started-at="2023-07-06T19:49:37 COT" name="endToEndTest" finished-at="2023-07-06T19:49:40 COT" duration-ms="2269" status="PASS">
+        <test-method signature="searchFlight()[pri:1, instance:com.globant.app.E1_BookingTillCompleteCreditCardTest@24fcf36f]" started-at="2023-07-28T19:45:52 COT" name="searchFlight" finished-at="2023-07-28T19:45:57 COT" duration-ms="5254" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- endToEndTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.globant.app.E1_BookingTillCompleteCreditCardTest@33990a0c]" started-at="2023-07-06T19:49:40 COT" name="tearDown" finished-at="2023-07-06T19:49:40 COT" duration-ms="0" status="PASS">
+        </test-method> <!-- searchFlight -->
+        <test-method signature="filterOptions()[pri:2, instance:com.globant.app.E1_BookingTillCompleteCreditCardTest@24fcf36f]" started-at="2023-07-28T19:45:57 COT" name="filterOptions" finished-at="2023-07-28T19:46:02 COT" duration-ms="4989" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- filterOptions -->
+        <test-method signature="selectButtonPresentOnEveryResult()[pri:3, instance:com.globant.app.E1_BookingTillCompleteCreditCardTest@24fcf36f]" started-at="2023-07-28T19:46:02 COT" name="selectButtonPresentOnEveryResult" finished-at="2023-07-28T19:46:03 COT" duration-ms="696" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectButtonPresentOnEveryResult -->
+        <test-method signature="verifyTripDetails()[pri:4, instance:com.globant.app.E1_BookingTillCompleteCreditCardTest@24fcf36f]" started-at="2023-07-28T19:46:03 COT" name="verifyTripDetails" finished-at="2023-07-28T19:46:14 COT" duration-ms="10783" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyTripDetails -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.globant.app.E1_BookingTillCompleteCreditCardTest@24fcf36f]" started-at="2023-07-28T19:46:14 COT" name="tearDown" finished-at="2023-07-28T19:46:14 COT" duration-ms="155" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
